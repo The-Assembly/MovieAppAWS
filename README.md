@@ -1,3 +1,5 @@
+https://lc55zcp9h4.execute-api.us-east-1.amazonaws.com/Testing
+
 Commands
 go get github.com/aws/aws-lambda-go/lambda # for handler registration
 	go get github.com/stretchr/testify # for unit tests
