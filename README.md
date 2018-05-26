@@ -9,3 +9,6 @@ go build -o main main.go# MovieAppAWS
 
 
 go.exe get -u github.com/aws/aws-lambda-go/cmd/build-lambda-zip
+
+from cmd:
+"c:\Users\The Assembly\go\bin\build-lambda-zip.exe" -o main.zip main
