@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	apikey       = "921303bd9d6beed719ae88231d2534db"
+	API_KEY      = "921303bd9d6beed719ae88231d2534db"
 	ErrorBackend = errors.New("Something went wrong")
 )
 
@@ -31,7 +31,7 @@ type Movie struct {
 }
 
 func Handler(request Request) ([]Movie, error) {
-	url := fmt.Sprintf("https://api.themoviedb.org/3/discover/movie?api_key=%s", apikey)
+	url := fmt.Sprintf("https://api.themoviedb.org/3/discover/movie?api_key=%s", API_KEY)
 
 	client := &http.Client{}
 
@@ -50,7 +50,6 @@ func Handler(request Request) ([]Movie, error) {
 	if err != nil {
 		return []Movie{}, ErrorBackend
 	}
-
 	defer resp.Body.Close()
 
 	var data MovieDBResponse
