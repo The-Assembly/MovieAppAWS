@@ -80,3 +80,12 @@ CREATE AWS API GATEWAY TO USE LAMBDA FUNCTION
 
 7. Copy the link that comes up next to 'Invoke URL' and paste it into the address bar of your web browser.  You should now see the JSON results in your browser.
 
+BUILD WEB APP TO CONSUME AWS API RESULTS
+
+1. Copy the contents of the 'WebApp' subfolder in the repository. There should be two files: index.html and api.js.
+
+2. In api.js, replace the URL in the 'fetch' command in the first line with the Invoke URL you created in previous section.
+
+3. Open the page from your file system in a Mozilla compatible browser (might not work in IE/Safari, tested on Chrome/Firefox) and you should be able to see the posters of the movies in your list in a grid with title and details.  You can also deploy the page and js file to your local/online web server to access it from a web link.
+
+Once you've completed this part of our workshop, you can navigate to https://github.com/The-Assembly/MovieAppFlutter to get the mobile app we showed you how to code in the second half of our workshop. Enjoy! - The Assembly Team
