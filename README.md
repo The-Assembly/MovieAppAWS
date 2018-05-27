@@ -33,9 +33,9 @@ CREATE GO DEPLOYMENT PACKAGE FOR UPLOAD TO AWS LAMBDA
     
     This should create a Linux executable that can be uploaded (after zipping) to AWS Lambda
 
-8.  Zip the binary into a deployment package from cmd:
+8.  Zip the binary into a deployment package called 'main.zip' from cmd:
 
-	    zip deployment.zip main
+	    zip main.zip main
 	    
     If you are using windows, you need to use the following steps instead, else you might get permission errors on Lambda console:
     
