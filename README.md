@@ -36,19 +36,19 @@ Create Go executable for upload to AWS Lambda
 
 8.  Zip the binary into a deployment package:
 
-		zip deployment.zip main
+	zip deployment.zip main
 
-		If you are a Windows user, you need to use the following steps instead, else you might get permission errors on Lambda console:
+    If you are using windows, you need to use the following steps instead, else you might get permission errors on Lambda console:
 			
-			i. From cmd, run: 
-      <b>go get -u github.com/aws/aws-lambda-go/cmd/build-lambda-zip</b>
+	i. From cmd, run: 
+      	<b>go get -u github.com/aws/aws-lambda-go/cmd/build-lambda-zip</b>
 			
-			ii. Use the tool from your GOPATH. If you have a default installation of Go, the tool will be in %USERPROFILE%\Go\bin.
-					
-					in cmd.exe: 
+	ii. Use the tool from your GOPATH. If you have a default installation of Go, the tool will be in %USERPROFILE%\Go\bin.
+	
+	in cmd.exe: 
           <b>%USERPROFILE%\Go\bin\build-lambda-zip.exe -o main.zip main </b>
 					
-					eg; 
+	eg; 
           <i>"c:\Users\The Assembly\go\bin\build-lambda-zip.exe" -o main.zip main</i>
 			
-			{Source: https://github.com/aws/aws-lambda-go}
+	{Source: https://github.com/aws/aws-lambda-go}
