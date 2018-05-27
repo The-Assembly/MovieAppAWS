@@ -10,45 +10,44 @@ Create Go executable for upload to AWS Lambda
 
 3.	Install dependencies with Go get from cmd
       
-      <b>go get github.com/aws/aws-lambda-go/lambda # for handler registration</b>	
-      
-      <b>go get github.com/stretchr/testify # for unit tests</b>
+        go get github.com/aws/aws-lambda-go/lambda # for handler registration
+        go get github.com/stretchr/testify # for unit tests
 	
 4.	Create a new project folder (can open it up in VS Code if you'd like to edit/run/debug)
 
 5.	Copy main.go and main_test.go to your project folder (main and main.zip are compiled binaries - not needed if you are rebuilding them on your machine)
 
 6.	From cmd: run unit test coded in main_test.go by typing '
-	<b>go test</b>
-	'. Status returned should be OK.  
+<b>go test</b>
+'. Status returned should be OK.  
   
     If you'd like to debug in VS Code, install this via Go Get: https://github.com/derekparker/delve and create a debug congifuration from VS Code.
 
 7.	To create binary, execute the following commands in cmd:
   
-  <b>
-	set GOOS=linux
-	set GOARCH=amd64
-	go build -o main main.go
-  </b>
+        set GOOS=linux
+
+        set GOARCH=amd64
+
+        go build -o main main.go
     
-   This should create a Linux executable that can be uploaded (after zipping) to AWS Lambda
+    This should create a Linux executable that can be uploaded (after zipping) to AWS Lambda
 
 8.  Zip the binary into a deployment package from cmd:
 
-	  <b>zip deployment.zip main</b>
+	    zip deployment.zip main
 
-    If you are using windows, you need to use the following steps instead, else you might get permission errors on Lambda console:
+  
+  
+        If you are using windows, you need to use the following steps instead, else you might get permission errors on Lambda console:
     
-      i. From cmd, run: 
-            <b>go get -u github.com/aws/aws-lambda-go/cmd/build-lambda-zip</b>
+        i. From cmd, run: 
+            go get -u github.com/aws/aws-lambda-go/cmd/build-lambda-zip
 
-      ii. Use the tool from your GOPATH. If you have a default installation of Go, the tool will be in %USERPROFILE%\Go\bin.
+        ii. Use the tool from your GOPATH. If you have a default installation of Go, the tool will be in %USERPROFILE%\Go\bin.
 
-      in cmd.exe: 
-              <b>%USERPROFILE%\Go\bin\build-lambda-zip.exe -o main.zip main </b>
+            From cmd: %USERPROFILE%\Go\bin\build-lambda-zip.exe -o main.zip main 
 
-      eg; 
-              <i>"c:\Users\The Assembly\go\bin\build-lambda-zip.exe" -o main.zip main</i>
+              eg; "c:\Users\The Assembly\go\bin\build-lambda-zip.exe" -o main.zip main
 
-      {Source: https://github.com/aws/aws-lambda-go}
+        {Source: https://github.com/aws/aws-lambda-go}
