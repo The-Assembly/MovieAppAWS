@@ -28,13 +28,11 @@ Create Go executable for upload to AWS Lambda
   
   <b>
 	set GOOS=linux
-  
-  set GOARCH=amd64
-  
-  go build -o main main.go
+	set GOARCH=amd64
+	go build -o main main.go
   </b>
     
-    This should create a Linux executable that can be uploaded (after zipping) to AWS Lambda
+   This should create a Linux executable that can be uploaded (after zipping) to AWS Lambda
 
 8.  Zip the binary into a deployment package from cmd:
 
